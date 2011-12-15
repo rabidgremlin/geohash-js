@@ -1,0 +1,22 @@
+<html>
+<body>
+<h1>Some simple unit tests</h1>
+
+<p>encodeGeoHash(-36.848460,174.763331) = <span id="e1"></span> (should be rckq2gfy0v0w)<p>
+<p>decodeGeoHash('rckq2gfy0v0w') = <span id="d1-lat"></span>,<span id="d1-lon"></span> (should be -36.848460,174.763331)<p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="geohash.js"></script>
+<script>
+$(function(){
+	
+	$("#e1").text( encodeGeoHash(-36.848460,174.763331) );
+	
+	var loc = decodeGeoHash('rckq2gfy0v0w');
+	$("#d1-lat").text( loc.latitude[0].toFixed(6) );
+	$("#d1-lon").text( loc.longitude[0].toFixed(6) );
+	
+});
+</script>
+</body>
+</html>
